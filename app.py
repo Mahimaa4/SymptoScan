@@ -25,7 +25,9 @@ history_collection = db["history"]
 from flask import request, jsonify
 from groq import Groq
 
-client = Groq(groq_api_key = os.getenv("GROQ_API_KEY"))
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
 
 @app.route("/chat", methods=["POST"])
 def chat():
